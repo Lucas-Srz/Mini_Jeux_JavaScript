@@ -1,7 +1,8 @@
 /* Variable */
 :root{
     --color-white: rgb(255,255,255);
-    --color-black: rgb(0,0,0,0);
+    --color-black: rgb(0,0,0);
+    --color-gray: rgb(192, 192, 192);
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -10,6 +11,36 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+main{
+    text-align: center;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Modification de la cartes */
+a{
+    text-decoration: none;
+    color: var(--color-white);
+    display: flex;
+    text-align: center;
+}
+
+article{
+    margin: 25px;
+    padding: 15px;
+    background-color: var(--color-gray);
+    border: 3px solid black;
+    border-radius: 25px;
+}
+
+img{
+    width: 75px;
 }
 
 /* *************** CSS POUR Tablette / Ordinateur *************** */
