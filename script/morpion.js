@@ -6,56 +6,74 @@ function init() {
     console.log("Entrée dans la fonction : init()");
     // Déclaration des variables / constantes
     let gamesBoard = new Array();
+    let hasWon = false;
+    let isPlayer1 = true;
+
+    const VIDE = " ";
 
     // Initialiser le plateaux de jeux avec les valeurs de départ
-    initGamesBoard(gamesBoard);
+    initGamesBoard(gamesBoard,VIDE);
     console.log(gamesBoard);
 
-    playOnce(gamesBoard);
+    playOnce();
     
     
 }
 
 /**
- * Fonction qui initialise le plateaux de jeux du morpion avec ses valeurs de départ
+ * Fonction qui initialise le plateaux de jeux du morpion avec sa valeur "vide" dans les 9 cellules
  * @param {Array} plateauDeJeux 
+ * @param {string} caracter
  */
-function initGamesBoard(plateauDeJeux){
+function initGamesBoard(plateauDeJeux, caracter){
     console.log("Entrée dans la fonction initGamesBoard()");
-    const VIDE = " ";
     const TAILLE = 9;
 
     for (let i = 0; i < TAILLE; i++) {
-        plateauDeJeux[i] = VIDE;
+        plateauDeJeux[i] = caracter;
         
     }
     
 }
 
 
-
-function playOnce(plateauDeJeux) {
+/**
+ * Fonction qui manipule le DOM afin de rendre le plateaux de jeux clicables 
+ */
+function playOnce() {
     console.log("Fonction : playOnce()");
-    // Déclaration des variables
-    let hasWon = false;
-    let isPlayer1 = true;
     // Déclaration des variables pour le DOM
-    let dom_textArea = document.getElementById("textArea");
+    let dom_all_cell = document.getElementsByClassName("cell");
+    // Rendre le plateaux cliquable
+    for (let i = 0; i < dom_all_cell.length; i++) {
+        dom_all_cell[i].setAttribute("onclick", "detectCell(" + i + ")");
+    }
 
-    do {
-        // Quand le joueurs 1 joue
-        if(isPlayer1 = true){
-
-        } 
-        // Quand le joueurs 2 joue
-        else {
-
-        }
-        isPlayer1 = !isPlayer1;
-    } while (hasWon === false);
-
-    console.log(plateauDeJeux);
+    // console.log(dom_all_cell);
 }
+
+/**
+ * TODO : Documentation à faire
+ * @param {Number} index 
+ */
+function detectCell(index){
+    console.log("Fonction : detectCell");
+    console.log(index);
+}
+
+// let newP = document.createElement("p");
+// let dom_textArea = document.getElementById("textArea");
+// let dom_all_p = document.getElementsByTagName("p");
+
+// Mettre à jour le texte
+// for (let i = dom_all_p.length - 1; i >= 0; i--) {
+//     dom_all_p[i].remove();
+// }
+// newP.innerText = "Joueurs 1, à toi de jouer !";
+// dom_textArea.appendChild(newP);
+// dom_textArea.setAttribute("class","player1");
+
+
 // Jouer un coup
 
 // Vérifier une victoire (Booléen)

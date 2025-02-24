@@ -1,7 +1,10 @@
 /* Variable */
 :root{
     --color-white: rgb(255,255,255);
+    --color-gray: gray;
     --color-black: rgb(0,0,0);
+    --color-red: rgb(253,114,114);
+    --color-blue: rgb(116,192,252);
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -33,6 +36,13 @@ header, main{
     }
 }
 
+#textArea{
+    height: 64px;
+}
+
+.player1{
+    background-color: var(--color-blue);
+}
 
 /* *************** CSS POUR Tablette / Ordinateur *************** */
 /* XXX plus grand ou égale à XXXpx */
