@@ -12,7 +12,9 @@
 </head>
 <body>
     <header>
-        <h1>JEU DU <strong>MORPION</strong></h1>
+        <div id="title">
+            <h1>JEU DU <strong>MORPION</strong></h1>
+        </div>
         <nav></nav>
     </header>
 
@@ -29,29 +31,29 @@
             <!-- Plateaux de jeux -->
             <div id="gamesBoard">
                 <!-- Lignes 1 : Cellule 1 -->
-                <div class="cell"></div>
+                <button class="cell" onclick="clicCell(this, 0)"></button>
                 <!-- Lignes 1 : Cellule 2 -->
-                <div class="cell"></div>
+                <button class="cell" onclick="clicCell(this, 1)"></button>
                 <!-- Lignes 1 : Cellule 3 -->
-                <div class="cell"></div>
+                <button class="cell" onclick="clicCell(this, 2)"></button>
                 <!-- Lignes 2 : Cellule 1 -->
-                <div class="cell"></div>
+                <button class="cell" onclick="clicCell(this, 3)"></button>
                 <!-- Lignes 2 : Cellule 2 -->
-                <div class="cell"></div>
+                <button class="cell" onclick="clicCell(this, 4)"></button>
                 <!-- Lignes 2 : Cellule 3 -->
-                <div class="cell"></div>
+                <button class="cell" onclick="clicCell(this, 5)"></button>
                 <!-- Lignes 3 : Cellule 1 -->
-                <div class="cell"></div>
+                <button class="cell" onclick="clicCell(this, 6)"></button>
                 <!-- Lignes 3 : Cellule 2 -->
-                <div class="cell"></div>
+                <button class="cell" onclick="clicCell(this, 7)"></button>
                 <!-- Lignes 3 : Cellule 3 -->
-                <div class="cell"></div>
+                <button class="cell" onclick="clicCell(this, 8)"></button>
             </div>
         </section>
 
-        <!-- Section pour les boutons "Jouer" et "Restart" -->
+        <!-- Section pour les boutons "Jouer" / "Restart" -->
         <section id="buttonArea">
-            <button onclick="init()">Jouez</button>
+            <button onclick="init()" id="btnPlay">Jouez</button>
         </section>
     </main>
 

@@ -13,9 +13,10 @@ function init() {
 
     // Initialiser le plateaux de jeux avec les valeurs de départ
     initGamesBoard(gamesBoard,VIDE);
-    console.log(gamesBoard);
 
-    playOnce();
+    playOnce(gamesBoard);
+    console.log(gamesBoard);
+    
     
     
 }
@@ -31,9 +32,7 @@ function initGamesBoard(plateauDeJeux, caracter){
 
     for (let i = 0; i < TAILLE; i++) {
         plateauDeJeux[i] = caracter;
-        
     }
-    
 }
 
 
@@ -47,9 +46,9 @@ function playOnce() {
     // Rendre le plateaux cliquable
     for (let i = 0; i < dom_all_cell.length; i++) {
         dom_all_cell[i].setAttribute("onclick", "detectCell(" + i + ")");
+        // console.log(i);
     }
 
-    // console.log(dom_all_cell);
 }
 
 /**
@@ -57,7 +56,7 @@ function playOnce() {
  * @param {Number} index 
  */
 function detectCell(index){
-    console.log("Fonction : detectCell");
+    console.log("Fonction : detectCell()s");
     console.log(index);
 }
 
