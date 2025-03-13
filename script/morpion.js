@@ -57,6 +57,33 @@ function reset(){
 
     // J'utilise le Array gameBoard pour affecter les bonnes valeurs dans le DOM (button.cell)
     for (var i = 0; i < dom_buttons.length; i++) {
-        dom_buttons[i].innerText = gamesBoard[index];
+        dom_buttons[i].innerText = gamesBoard[i];
     }
+
+    changeTextAndColor()
+}
+
+/**
+ * Fonction changeTextAndColor() change le texte et la couleur du background selon le joueur qui joue actuellement
+ */
+function changeTextAndColor(){
+    console.log("Entrée dans la fonction : changeTextAndColor()");
+    // Si c'est au joueur 1
+    if (isPlayerOne) {
+        // Je donne la class player1 pour avoir le backgroud-color en Bleu
+        dom_textArea.setAttribute("class", "player1");
+        // MAJ du texte
+        dom_text.innerText = "JOUEUR 1, à toi de jouer !"
+    } else {
+        // Je donne la class player1 pour avoir le backgroud-color en Bleu
+        dom_textArea.setAttribute("class", "player2");
+        // MAJ du texte
+        dom_text.innerText = "JOUEUR 2, à toi de jouer !"
+    }
+
+    // Je vide la zone de texte
+    dom_textArea.textContent = "";
+
+    // Je mets à jour la zone de texte
+    dom_textArea.appendChild(dom_text);
 }
