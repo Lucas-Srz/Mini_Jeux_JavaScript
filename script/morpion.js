@@ -3,7 +3,7 @@ console.log("Entrée dans morpion.js");
  *          Déclaration des variables avec une portéé globale          *
  ***********************************************************************/
 var dom_textArea, dom_buttonArea, dom_buttons, dom_text, dom_btn_play;
-var hasWin, isPlayerOne;
+var hasWon, isPlayerOne;
 var gamesBoard;
 
 const VIDE = "";
@@ -41,7 +41,7 @@ function reset(){
     dom_btn_play.innerText = "Recommencer une nouvelle partie";
 
     // J'hydrate les deux variables booléennes
-    hasWin = false;
+    hasWon = false;
     isPlayerOne = true;
 
     // Je force les button.cell avec la propriété disabled = FALSE
@@ -86,4 +86,40 @@ function changeTextAndColor(){
 
     // Je mets à jour la zone de texte
     dom_textArea.appendChild(dom_text);
+}
+
+/**
+ * Fonction clicCell qui est appelée au clic sur l'une des cases du morpion.
+ * Elle prend deux paramètres :
+ * - dom_self : représente la balaise sur laquelle le joueur a cliqué
+ * - index : représente le numéro d'indice à utiliser pour manipuler le tableau JS gameBoard
+ * @param {HTMLElement} dom_self 
+ * @param {Number} index 
+ */
+function clicCell(dom_self, index){
+    console.log("Entrée dans la fonction : clicCell()");
+
+    // Je mets à jour gameBoard avec le symbole du joueur correspondant
+    if (isPlayerOne) {
+        gamesBoard[index] = PLAYER_ONE;
+    } else {
+        gamesBoard[index] = PLAYER_TOW;
+    }
+
+    // Avec le tableau JS (gameBoard), je mets à jour le plateau de jeu issu du DOM
+    dom_self.innerText = gamesBoard[index];
+
+    // Je désactive le button qui à reçu le clic
+    dom_self.disabled = true;
+
+    // TODO : Faire la fonction !!!
+    // hasWon = isVictorious();
+
+    // Si hasWon = true, alors je desactive tout les bouton.cell sinon, je change de joueur
+    if (hasWon) {
+        
+    } else {
+        isPlayerOne = !isPlayerOne;
+        changeTextAndColor();
+    }
 }
