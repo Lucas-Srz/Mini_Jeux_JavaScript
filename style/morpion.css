@@ -1,10 +1,10 @@
 /* Variable */
 :root{
     --color-white: rgb(255,255,255);
-    --color-gray: gray;
+    --color-gray: rgb(239, 232, 232);
     --color-black: rgb(0,0,0);
-    --color-red: rgb(253,114,114);
-    --color-blue: rgb(116,192,252);
+    --color-red: rgb(255,114,114);
+    --color-blue: rgb(114,114,255);
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -27,13 +27,9 @@ header, main{
     height: 300px;
     margin-top: 25px;
     margin-bottom: 25px;
-    /* border: 3px solid black; */
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    div{
-        border: 2px solid black;
-    }
 }
 
 #textArea{
@@ -42,6 +38,23 @@ header, main{
 
 .player1{
     background-color: var(--color-blue);
+    color: var(--color-white)
+}
+
+.player2{
+    background-color: var(--color-red);
+    color: var(--color-white)
+}
+
+#buttonArea{
+    justify-content: center;
+
+    #btnPlay{
+        width: 300px;
+        height: 30px;
+        background-color: var(--color-gray);
+        font-size: 16px;
+    }
 }
 
 /* *************** CSS POUR Tablette / Ordinateur *************** */
