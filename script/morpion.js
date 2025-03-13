@@ -1,7 +1,23 @@
 console.log("Entrée dans morpion.js");
+/***********************************************************************
+ *          Déclaration des variables avec une portéé globale          *
+ ***********************************************************************/
+var dom_textArea, dom_buttonArea, dom_buttons, dom_text, dom_btn_play;
+var hasWin, isPlayerOne;
+var gamesBoard;
+
+const VIDE = "";
+const PLAYER_ONE = "O";
+const PLAYER_TOW = "X";
+
 /*********************************************
- *          Déclaration des fonction
+ *          Déclaration des fonction         *
  *********************************************/
+/**
+ * Fonction init() qui inisalise le début de la partie
+ * Elle récupère tous les éléments du DOM qui seront manipulés lors de l'exécution du jeux
+ * Puis elle demande à reset (remettre les valeurs du jeux à zéro) la partie
+ */
 function init() {
     console.log("Entrée dans la fonction : init()");
     // Déclaration des variables / constantes
